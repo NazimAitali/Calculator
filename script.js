@@ -37,11 +37,14 @@ function selectNumber() {
 }
 equale.addEventListener("click", equaleFunction);
 function equaleFunction() {
-  if (isNaN(eval(result.innerHTML))) {
-    result.innerHTML = "error"
-  } else {
+
+  try {
+    Number(eval(result.innerHTML))
+  } catch (error) {
+    result.innerHTML = "ERROR"
+   }
     result.innerHTML = eval(result.innerHTML)
-  }
+  
  }
   
 
